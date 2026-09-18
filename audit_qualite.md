@@ -1,4 +1,5 @@
 # Audit d'un jeu de données Open Data 
+
 ## 1.Identification du jeu de données 
 
 
@@ -17,6 +18,7 @@ Format téléchargé	| CSV
 Dictionnaire des variables disponible ? (oui/non)|oui 
 
 ## 2. Ouverture et Description d'un jeu de données
+
 ### Dimensions du jeu de données 
 Nombre de lignes(aprés filtrage 62)   : 231
 Nombre de colonnes(avant tri) : 47
@@ -52,4 +54,15 @@ ________________________________________________________________________________
 |Fraîcheur  |Tri de la colonne de Prix Gazole mis à jour le pour trouver la date la plus       récente|Date la plus récente :18/09/2026,identique à la date du jour |faible| 
 
 ## 4 Proposition des usages 
-### Usage 1
+
+### Usage 1 "Dans quelles villes du Pas-De-Calais le carburant est il le moins cher?"
+- Question métier : Dans quelle villes du Pas-De-Calais le E85 est-il le moins  cher?
+- Colonnes utilisées : Ville,Prix E85 
+- Défaut qualité pouvant fausser la réponse :134 valeurs de Prix E85 sont manquantes sur 231 lignes,ce qui peut rendre l'analyse incompléte et biaisée  
+
+
+ 
+### Usage 2 "Suivre les prix actuels du Gazole dans le Pas-De-Calais "
+- Question métier : Quels sont les prix actuels du Gazole dans les différentes villes de Pas-De-Calais?
+- Colonnes utilisées : Ville,Prix Gazole mis a jour le.
+- Défaut qualité pouvant fausser la réponse : 14 valeurs de Prix Gazole sont manquantes sur 231 lignes (6,1%).L'impact reste faible ,mais certaines stations ne pourront pas être prises en compte dans l'analyse.
