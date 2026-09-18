@@ -23,12 +23,12 @@ Nombre de colonnes(avant tri) : 47
 
 ### Descritption de 5 colonnes
 
-|Nom de la colonne           |Type de valeur |Exemple de valeur                 |
-| ville                      | commune(texte)       | Montigny-en-gohelle       |
-| Code postal                | code_postal (nombre) | 62640                     |
-| Adresse                    |     adresse (texte)  | PONT DU TONKIN            |
-| Prix Gazole                |    float  (nombre)   |  2.20                     |
-| Prix Gazole mis à jour le  |datetime_aware (date) |  2026-09-18T08:50:21+00:00|
+|Nom de la colonne           |Type de valeur |Exemple de valeur          |
+| ville                      | texte         | Montigny-en-gohelle       |
+| Code postal                | nombre        | 62640                     |
+| Adresse                    | texte         | PONT DU TONKIN            |
+| Prix Gazole                | nombre        |  2.20                     |
+| Prix Gazole mis à jour le  |date           |  2026-09-18T08:50:21+00:00|
 
 ### Problèmes rencontrés à l'ouverture
 __ Certaines colonnes sont difficiles à lire car elles contiennent des données affichées sous forme de texte structurés (ex:horaires,services,prix).
@@ -37,3 +37,19 @@ __ Il y a des accents manquant
 __ Certainnes colonnes sont mal alignées les données des lignes ne sont pas en face .
 
 ### Remplissage de la grille 
+|Dimension  |Méthode utilisée dans le tableur | Constat (chiffré ou exemple)|Gravité(faible/moyenne/forte)|
+_____________________________________________________________________________________
+|Complétude |Filtre sur les valeurs vides de la colonne Prix Gazole|14 Valeurs manquantes sur 231 lignes (environ 6.1%)|Faible|
+
+|Exacitude  |Tri MIN/MAX de la colonne Prix SP98 | Prix MIN 1.99/Prix MAX 2.748|Aucune valeur implausible détectée |Faible |
+
+|Cohérence  |Comparaison des colonnes Carburants disponibles et Prix SP98|Lorsque SP98 est indiqué disponible,le prix SP98 est renseigné;aucune incohérence détectée |Faible|
+
+|Validité   |Filtre sur la colonne "Prix gazole mis a jour le " pour vérifier le format des valeurs |Les dates observées utilisent le même format|faible
+
+|Unicité    |Mise en forme conditionnelle sur la colonne id avec NB.SI pour détecter les doublons |Aucun doublon détecté parmi les 231 identifiants |faible|
+
+|Fraîcheur  |Tri de la colonne de Prix Gazole mis à jour le pour trouver la date la plus       récente|Date la plus récente :18/09/2026,identique à la date du jour |faible| 
+
+## 4 Proposition des usages 
+### Usage 1
